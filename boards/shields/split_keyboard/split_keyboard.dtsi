@@ -48,7 +48,7 @@
 
     battery: battery {
         compatible = "zmk,battery-voltage-dividers";
-        io-channels = <&adc 0>
+        io-channels = <&adc 0>;
         output-ohms = <2000000>;
         full-ohms = <2806000>;
     };
