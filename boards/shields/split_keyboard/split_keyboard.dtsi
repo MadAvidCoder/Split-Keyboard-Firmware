@@ -47,10 +47,10 @@
     };
 
     // battery: battery {
-    //     compatible = "zmk,battery-voltage-divider";
-    //     io-channels = <&adc 0>;
-    //     output-ohms = <2000000>;
-    //     full-ohms = <2806000>;
+        // compatible = "zmk,battery-voltage-divider";
+        // io-channels = <&adc 0>;
+        // output-ohms = <2000000>;
+        // full-ohms = <2806000>;
     // };
 
     chosen {
@@ -58,7 +58,7 @@
         // zmk,battery = &battery;
     };
 
-    aliases {
-        adc = &adc;
-    };
+//     aliases {
+//         adc = &adc;
+//     };
 };
