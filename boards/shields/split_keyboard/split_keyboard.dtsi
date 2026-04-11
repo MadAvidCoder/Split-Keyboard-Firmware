@@ -7,10 +7,6 @@
 #include "split_keyboard-layouts.dtsi"
 
 / {
-    chosen {
-        zmk,physical-layout = &default_layout;
-    };
-
     kscan: kscan {
         // If the hardware does not use a switch matrix, change this to the
         // appropriate driver and update the properties below to match.
@@ -48,5 +44,17 @@
             RC(3, 0) RC(3, 1) RC(3, 2) RC(3, 3) RC(3, 4) RC(3, 5)    RC(3, 6) RC(3, 7) RC(3, 8) RC(3, 9) RC(3,10) RC(3,11)
                                        RC(4, 3) RC(4, 4) RC(4, 5)    RC(4, 6) RC(4, 7) RC(4, 8)
         >;
+    };
+
+    battery: battery {
+        compatible = "zmk,battery-voltage-dividers";
+        io-channels = <&adc 0>
+        output-ohms = <2000000>;
+        full-ohms = <2806000>;
+    };
+
+    chosen {
+        zmk,physical-layout = &default_layout;
+        zmk,battery = &battery;
     };
 };
